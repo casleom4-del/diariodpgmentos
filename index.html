@@ -1,0 +1,451 @@
+:::writing{variant="document" id="74163" title="index.html — Ruber Parts"} <!DOCTYPE html> <html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="description" content="Ruber Parts - Peças e acessórios automotivos."> <title>RUBER PARTS | Peças Automotivas</title>
+
+<style> @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root{ --red:#e50914; --red2:#ff2733; --black:#050505; --dark:#0b0b0b; --card:#111111; --line:rgba(255,255,255,.09); --white:#fff; --gray:#a1a1a1; }
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{ font-family:Inter,Arial,sans-serif; background:var(--black); color:white; overflow-x:hidden; }
+
+a{ text-decoration:none; color:inherit; }
+
+button{ font-family:inherit; }
+
+.container{ width:min(1180px,92%); margin:auto; }
+
+/* HEADER */
+
+header{ position:fixed; top:0; left:0; width:100%; height:76px; z-index:1000; background:rgba(5,5,5,.78); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+
+.nav{ height:100%; display:flex; align-items:center; justify-content:space-between; }
+
+.logo{ display:flex; align-items:center; gap:10px; font-size:20px; font-weight:900; letter-spacing:-1px; }
+
+.logo-box{ width:38px; height:38px; display:flex; align-items:center; justify-content:center; background:var(--red); font-size:21px; font-weight:900; transform:skew(-12deg); }
+
+.logo-text span{ color:var(--red); }
+
+.menu{ display:flex; align-items:center; gap:30px; list-style:none; }
+
+.menu a{ color:#bcbcbc; font-size:14px; font-weight:600; transition:.25s; }
+
+.menu a:hover{ color:white; }
+
+.menu .contact{ background:var(--red); color:white; padding:12px 19px; border-radius:7px; }
+
+.menu .contact:hover{ background:var(--red2); transform:translateY(-2px); }
+
+.mobile{ display:none; border:0; background:none; color:white; font-size:28px; cursor:pointer; }
+
+/* HERO */
+
+.hero{ min-height:100vh; position:relative; display:flex; align-items:center; overflow:hidden; background: radial-gradient(circle at 80% 50%,rgba(229,9,20,.22),transparent 25%), linear-gradient(110deg,#050505 35%,#101010); }
+
+.hero::before{ content:""; position:absolute; width:650px; height:650px; right:-250px; top:50%; transform:translateY(-50%); border:1px solid rgba(229,9,20,.2); border-radius:50%; box-shadow: 0 0 0 80px rgba(229,9,20,.035), 0 0 0 160px rgba(229,9,20,.02); }
+
+.hero::after{ content:""; position:absolute; width:500px; height:500px; right:40px; top:50%; transform:translateY(-50%) rotate(20deg); background: linear-gradient(135deg,transparent 45%,rgba(229,9,20,.12) 46%,transparent 47%); opacity:.5; }
+
+.hero-content{ position:relative; z-index:2; padding-top:80px; }
+
+.tag{ display:inline-flex; align-items:center; gap:10px; color:#ff5962; font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:22px; }
+
+.tag::before{ content:""; width:28px; height:2px; background:var(--red); }
+
+.hero h1{ max-width:780px; font-size:clamp(50px,8vw,92px); line-height:.92; letter-spacing:-6px; font-weight:900; }
+
+.hero h1 span{ color:var(--red); }
+
+.hero-description{ max-width:570px; margin:28px 0 34px; color:#9a9a9a; line-height:1.8; font-size:16px; }
+
+.buttons{ display:flex; gap:12px; flex-wrap:wrap; }
+
+.btn{ display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 23px; border-radius:7px; font-size:13px; font-weight:800; transition:.3s; }
+
+.btn-red{ background:var(--red); color:white; box-shadow:0 12px 35px rgba(229,9,20,.2); }
+
+.btn-red:hover{ background:var(--red2); transform:translateY(-3px); box-shadow:0 15px 40px rgba(229,9,20,.3); }
+
+.btn-dark{ border:1px solid #333; background:rgba(255,255,255,.025); color:#ddd; }
+
+.btn-dark:hover{ background:#171717; border-color:#555; }
+
+.hero-info{ display:flex; gap:45px; margin-top:65px; }
+
+.info strong{ display:block; font-size:23px; }
+
+.info small{ color:#666; font-size:10px; text-transform:uppercase; letter-spacing:1px; }
+
+/* SECTIONS */
+
+section{ padding:105px 0; }
+
+.section-label{ color:#ff4d58; font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:13px; }
+
+.section-title{ font-size:clamp(34px,5vw,54px); line-height:1; letter-spacing:-3px; font-weight:900; }
+
+.section-title span{ color:var(--red); }
+
+.section-top{ display:flex; justify-content:space-between; align-items:end; gap:30px; margin-bottom:48px; }
+
+.section-text{ max-width:420px; color:#777; line-height:1.7; font-size:14px; }
+
+/* CATEGORIAS */
+
+.categories{ background:#0b0b0b; }
+
+.category-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:15px; }
+
+.category{ min-height:230px; padding:26px; background:linear-gradient(145deg,#181818,#0e0e0e); border:1px solid var(--line); border-radius:12px; position:relative; overflow:hidden; transition:.35s; }
+
+.category:hover{ transform:translateY(-7px); border-color:rgba(229,9,20,.45); }
+
+.category::after{ content:""; position:absolute; width:150px; height:150px; right:-70px; bottom:-70px; border-radius:50%; background:rgba(229,9,20,.1); }
+
+.icon{ font-size:37px; margin-bottom:65px; }
+
+.category h3{ font-size:16px; margin-bottom:8px; }
+
+.category p{ color:#6d6d6d; font-size:12px; line-height:1.5; }
+
+/* PRODUTOS */
+
+.products{ background:#050505; }
+
+.product-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+
+.product{ overflow:hidden; border:1px solid var(--line); border-radius:12px; background:#101010; transition:.3s; }
+
+.product:hover{ transform:translateY(-6px); border-color:#333; }
+
+.product-img{ height:205px; display:flex; align-items:center; justify-content:center; background: radial-gradient(circle,rgba(229,9,20,.14),transparent 55%), #171717; font-size:70px; }
+
+.product-info{ padding:20px; }
+
+.product-info small{ color:var(--red); font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:1px; }
+
+.product-info h3{ margin:9px 0 17px; font-size:15px; }
+
+.product-info a{ color:#bbb; font-size:12px; font-weight:700; }
+
+.product-info a:hover{ color:white; }
+
+/* SOBRE */
+
+.about{ background:#0b0b0b; }
+
+.about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+
+.about-image{ height:480px; border-radius:18px; border:1px solid var(--line); background: radial-gradient(circle at center,rgba(229,9,20,.2),transparent 35%), linear-gradient(145deg,#191919,#080808); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+
+.about-image::before{ content:"RUBER"; position:absolute; font-size:100px; font-weight:900; color:rgba(255,255,255,.025); transform:rotate(-20deg); }
+
+.wheel{ width:220px; height:220px; border-radius:50%; border:24px solid #303030; box-shadow: inset 0 0 0 14px #111, 0 0 0 7px rgba(229,9,20,.18); position:relative; }
+
+.wheel::before{ content:""; position:absolute; width:90px; height:90px; border:15px solid #252525; border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%); }
+
+.wheel::after{ content:""; position:absolute; width:38px; height:38px; background:var(--red); border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%); }
+
+.about-content h2{ font-size:clamp(35px,5vw,58px); line-height:1; letter-spacing:-3px; margin-bottom:25px; }
+
+.about-content h2 span{ color:var(--red); }
+
+.about-content>p{ color:#898989; line-height:1.8; font-size:14px; margin-bottom:28px; }
+
+.features{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+
+.feature{ padding:18px; background:#151515; border:1px solid var(--line); border-radius:8px; }
+
+.feature strong{ display:block; font-size:12px; margin-bottom:6px; }
+
+.feature small{ color:#6f6f6f; font-size:10px; }
+
+/* CTA */
+
+.cta{ padding:80px 0; background:#050505; }
+
+.cta-box{ padding:75px; border-radius:20px; position:relative; overflow:hidden; background: radial-gradient(circle at 90% 40%,rgba(255,255,255,.12),transparent 25%), linear-gradient(115deg,#a90009,#e50914); }
+
+.cta-box::after{ content:"R"; position:absolute; right:20px; bottom:-150px; font-size:420px; line-height:1; font-weight:900; color:rgba(0,0,0,.08); }
+
+.cta-box h2{ max-width:650px; position:relative; z-index:2; font-size:clamp(38px,6vw,65px); line-height:.98; letter-spacing:-4px; margin-bottom:20px; }
+
+.cta-box p{ position:relative; z-index:2; max-width:530px; color:rgba(255,255,255,.78); line-height:1.7; font-size:14px; margin-bottom:28px; }
+
+.cta-box .btn{ position:relative; z-index:2; background:white; color:#111; }
+
+/* FOOTER */
+
+footer{ padding:55px 0 25px; background:#030303; border-top:1px solid var(--line); }
+
+.footer-grid{ display:grid; grid-template-columns:2fr 1fr 1fr; gap:50px; padding-bottom:45px; }
+
+.footer-description{ max-width:350px; margin-top:18px; color:#666; font-size:12px; line-height:1.7; }
+
+footer h4{ font-size:11px; letter-spacing:1px; text-transform:uppercase; margin-bottom:17px; }
+
+footer ul{ list-style:none; }
+
+footer li{ color:#666; font-size:12px; margin-bottom:11px; }
+
+footer li a:hover{ color:white; }
+
+.bottom{ border-top:1px solid var(--line); padding-top:23px; display:flex; justify-content:space-between; color:#4f4f4f; font-size:10px; }
+
+/* WHATSAPP */
+
+.whatsapp{ position:fixed; right:22px; bottom:22px; width:58px; height:58px; border-radius:50%; background:#25d366; color:white; display:flex; align-items:center; justify-content:center; font-size:27px; z-index:999; box-shadow:0 10px 30px rgba(37,211,102,.3); transition:.3s; }
+
+.whatsapp:hover{ transform:scale(1.08); }
+
+/* ANIMAÇÃO */
+
+.reveal{ opacity:0; transform:translateY(30px); transition:.7s ease; }
+
+.reveal.show{ opacity:1; transform:translateY(0); }
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+.mobile{ display:block; }
+
+.menu{ position:absolute; top:76px; left:0; width:100%; padding:25px; background:#080808; border-bottom:1px solid var(--line); display:none; flex-direction:column; align-items:flex-start; }
+
+.menu.open{ display:flex; }
+
+.category-grid, .product-grid{ grid-template-columns:1fr 1fr; }
+
+.about-grid{ grid-template-columns:1fr; gap:45px; }
+
+.section-top{ display:block; }
+
+.section-text{ margin-top:18px; } }
+
+@media(max-width:600px){
+
+header{ height:68px; }
+
+.menu{ top:68px; }
+
+.hero-content{ padding-top:100px; }
+
+.hero h1{ font-size:52px; letter-spacing:-4px; }
+
+.hero-description{ font-size:14px; }
+
+.hero-info{ gap:25px; }
+
+section{ padding:75px 0; }
+
+.category-grid, .product-grid, .features, .footer-grid{ grid-template-columns:1fr; }
+
+.category{ min-height:190px; }
+
+.icon{ margin-bottom:45px; }
+
+.about-image{ height:340px; }
+
+.wheel{ width:175px; height:175px; }
+
+.cta-box{ padding:45px 25px; }
+
+.bottom{ flex-direction:column; gap:10px; } } </style> </head>
+
+<body>
+
+<header> <div class="container nav">
+
+<a href="#inicio" class="logo"> <div class="logo-box">R</div> <div class="logo-text">RUBER<span>PARTS</span></div> </a>
+
+<button class="mobile" id="mobileBtn">☰</button>
+
+<ul class="menu" id="menu"> <li><a href="#inicio">Início</a></li> <li><a href="#categorias">Categorias</a></li> <li><a href="#produtos">Produtos</a></li> <li><a href="#empresa">Empresa</a></li> <li><a class="contact" href="#contato">Contato</a></li> </ul>
+
+</div> </header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="inicio"> <div class="container hero-content">
+
+<div class="tag">Peças & acessórios automotivos</div>
+
+<h1> Tudo para o seu <span>carro.</span> </h1>
+
+<p class="hero-description"> Peças e acessórios automotivos para quem busca qualidade, variedade e um acabamento diferenciado para o veículo. </p>
+
+<div class="buttons"> <a href="#produtos" class="btn btn-red"> VER PRODUTOS → </a>
+
+<a href="#empresa" class="btn btn-dark"> CONHEÇA A RUBER PARTS </a> </div>
+
+<div class="hero-info"> <div class="info"> <strong>Auto</strong> <small>Peças</small> </div>
+
+<div class="info"> <strong>+Variedade</strong> <small>Produtos</small> </div>
+
+<div class="info"> <strong>SP</strong> <small>Diadema</small> </div> </div>
+
+</div> </section>
+
+<!-- CATEGORIAS -->
+
+<section class="categories" id="categorias"> <div class="container">
+
+<div class="section-top"> <div> <div class="section-label">Encontre o que procura</div>
+
+<h2 class="section-title"> Nossas <span>categorias</span> </h2> </div>
+
+<p class="section-text"> Confira algumas das principais categorias de produtos disponíveis na Ruber Parts. </p> </div>
+
+<div class="category-grid">
+
+<a href="#produtos" class="category reveal"> <div class="icon">⚙️</div> <h3>Peças automotivas</h3> <p> Componentes para diferentes aplicações automotivas. </p> </a>
+
+<a href="#produtos" class="category reveal"> <div class="icon">🚗</div> <h3>Exterior</h3> <p> Produtos para completar e renovar o visual do veículo. </p> </a>
+
+<a href="#produtos" class="category reveal"> <div class="icon">🛞</div> <h3>Rodas & calotas</h3> <p> Calotas, acabamentos e acessórios para rodas. </p> </a>
+
+<a href="#produtos" class="category reveal"> <div class="icon">🔧</div> <h3>Acessórios</h3> <p> Itens para interior, exterior e acabamento. </p> </a>
+
+</div> </div> </section>
+
+<!-- PRODUTOS -->
+
+<section class="products" id="produtos"> <div class="container">
+
+<div class="section-top"> <div> <div class="section-label">Linha Ruber Parts</div>
+
+<h2 class="section-title"> Produtos em <span>destaque</span> </h2> </div>
+
+<p class="section-text"> Alguns dos produtos e categorias que podem fazer parte do catálogo da Ruber Parts. </p> </div>
+
+<div class="product-grid">
+
+<article class="product reveal"> <div class="product-img">🛞</div>
+
+<div class="product-info"> <small>Rodas</small> <h3>Calotas automotivas</h3> <a href="#contato">Consultar produto →</a> </div> </article>
+
+<article class="product reveal"> <div class="product-img">⚙️</div>
+
+<div class="product-info"> <small>Interior</small> <h3>Manoplas e acabamentos</h3> <a href="#contato">Consultar produto →</a> </div> </article>
+
+<article class="product reveal"> <div class="product-img">🔩</div>
+
+<div class="product-info"> <small>Acabamento</small> <h3>Componentes automotivos</h3> <a href="#contato">Consultar produto →</a> </div> </article>
+
+<article class="product reveal"> <div class="product-img">🚘</div>
+
+<div class="product-info"> <small>Acessórios</small> <h3>Acessórios para veículos</h3> <a href="#contato">Consultar produto →</a> </div> </article>
+
+</div> </div> </section>
+
+<!-- EMPRESA -->
+
+<section class="about" id="empresa"> <div class="container about-grid">
+
+<div class="about-image reveal"> <div class="wheel"></div> </div>
+
+<div class="about-content reveal">
+
+<div class="section-label"> Sobre a Ruber Parts </div>
+
+<h2> Paixão por carros. <span>Compromisso com você.</span> </h2>
+
+<p> A Ruberparts Peças Automotivas Ltda. atua no segmento automotivo, oferecendo peças, acessórios e itens de acabamento para veículos. </p>
+
+<p> A empresa está localizada em Diadema, São Paulo, e possui o CNPJ 49.760.600/0001-47. </p>
+
+<div class="features">
+
+<div class="feature"> <strong>VARIEDADE</strong> <small>Diferentes categorias automotivas.</small> </div>
+
+<div class="feature"> <strong>QUALIDADE</strong> <small>Produtos para diversas necessidades.</small> </div>
+
+<div class="feature"> <strong>SEGMENTO</strong> <small>Foco no mercado automotivo.</small> </div>
+
+<div class="feature"> <strong>ATENDIMENTO</strong> <small>Suporte para sua compra.</small> </div>
+
+</div>
+
+</div>
+
+</div> </section>
+
+<!-- CTA -->
+
+<section class="cta" id="contato"> <div class="container">
+
+<div class="cta-box">
+
+<h2> Procurando uma peça para o seu carro? </h2>
+
+<p> Entre em contato com a Ruber Parts para consultar produtos, disponibilidade e informações sobre peças e acessórios automotivos. </p>
+
+<!-- COLOQUE AQUI O WHATSAPP REAL DA EMPRESA --> <a href="#" class="btn"> FALAR COM A RUBER PARTS → </a>
+
+</div>
+
+</div> </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer> <div class="container">
+
+<div class="footer-grid">
+
+<div> <a href="#inicio" class="logo"> <div class="logo-box">R</div> <div class="logo-text"> RUBER<span>PARTS</span> </div> </a>
+
+<p class="footer-description"> Peças e acessórios automotivos para quem procura qualidade, variedade e praticidade. </p> </div>
+
+<div> <h4>Navegação</h4>
+
+<ul> <li><a href="#inicio">Início</a></li> <li><a href="#categorias">Categorias</a></li> <li><a href="#produtos">Produtos</a></li> <li><a href="#empresa">Empresa</a></li> </ul> </div>
+
+<div> <h4>Empresa</h4>
+
+<ul> <li>Ruberparts Peças Automotivas Ltda.</li> <li>Diadema - SP</li> <li>CNPJ 49.760.600/0001-47</li> </ul> </div>
+
+</div>
+
+<div class="bottom"> <span>© 2026 Ruber Parts. Todos os direitos reservados.</span> <span>Peças & acessórios automotivos</span> </div>
+
+</div> </footer>
+
+<!-- WHATSAPP -->
+
+<a href="#" class="whatsapp" aria-label="WhatsApp"> ☎ </a>
+
+<script>
+
+const mobileBtn = document.getElementById("mobileBtn"); const menu = document.getElementById("menu");
+
+mobileBtn.addEventListener("click", function(){ menu.classList.toggle("open");
+
+if(menu.classList.contains("open")){ mobileBtn.innerHTML = "✕"; }else{ mobileBtn.innerHTML = "☰"; } });
+
+document.querySelectorAll(".menu a").forEach(function(link){
+
+link.addEventListener("click",function(){ menu.classList.remove("open"); mobileBtn.innerHTML = "☰"; });
+
+});
+
+const observer = new IntersectionObserver(function(entries){
+
+entries.forEach(function(entry){
+
+if(entry.isIntersecting){ entry.target.classList.add("show"); }
+
+});
+
+},{ threshold:.12 });
+
+document.querySelectorAll(".reveal").forEach(function(element){ observer.observe(element); });
+
+</script>
+
+</body> </html>
